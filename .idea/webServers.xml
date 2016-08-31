@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="eeb2bd74-5b1d-4b11-968b-d1c14064fdf5" name="flip.engr.oregonstate.edu" url="http://flip.engr.oregonstate.edu">
+        <fileTransfer host="flip.engr.oregonstate.edu" port="22" rootFolder="/nfs/stak/students/b/byrnemi" accessType="SFTP" password="dfe6dfc5dfd9dfdedfdedfc3dfc7dfcfdf9bdf98df99df9e" username="byrnemi">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

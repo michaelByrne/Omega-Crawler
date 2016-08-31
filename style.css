@@ -1,0 +1,372 @@
+/***  Team Omega - CS419_400 WebCrawler ***/
+
+/* Input Form Styling */
+fieldset {
+    width: 175px;
+    font-weight: lighter;
+    font-family: "Inconsolata";
+    color: white;
+    background-color: #59747D;
+    position: fixed;
+    z-index: 4;
+    opacity: .85;
+}
+
+fieldset.player_set{
+    position: fixed;
+    left:213px;
+    width: 75px;
+    background-color: #59747D;
+    height: 210px;
+    margin: auto;
+}
+
+form.player {
+
+    padding-top: 10px;
+
+}
+
+body {
+    background-color: #5A6569;
+}
+
+input.var_width {
+    width: 150px;
+    display: block;
+    margin-top: 4px;
+}
+
+.form-group-relative{
+    margin-left: 7px;
+    margin-bottom: 15px;
+}
+
+
+#history {
+    width: 100px;
+    margin-top: 4px;
+}
+
+label {
+    text-align: left;
+    width: 140px;
+    float: top;
+    margin-right: 15px;
+    display: block;
+    font-size: small;
+}
+
+.checkbox{
+    display: inline;
+    margin-right: 0px;
+    float: left;
+}
+
+div.form-group {
+    margin: 7px;
+}
+
+div.title_card {
+    z-index: 1;
+    position: absolute;
+    top:25%;
+    left: 35%;
+    font-family: "VT323";
+    font-size: 35px;
+    color: #36B8E3;
+    background-color: #CCDADF;
+    opacity: .85;
+    padding: 20px;
+    font-weight: lighter;
+
+}
+
+
+.button {
+    background-color: #FFCE9B; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: "Inconsolata";
+    font-size: small;
+    width: 120px;
+}
+
+.button2 {
+    background-color: #FFCE9B; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: small;
+    width: 120px;
+
+}
+
+.button:hover {
+    background-color: #CCDADF;
+}
+
+
+
+span {
+    display: block;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+#max {
+    width: 35px;
+    margin-top: 4px;
+}
+
+#submit, #play, #step, #end, #start, #pause {
+    display: block;
+    margin-top: 20px;
+    background-color: #FFCE9B; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Inconsolata";
+    font-size: small;
+    width: 90px;
+    height: 30px;
+
+}
+
+#submit{
+    margin: 4px 2px;
+}
+
+#submit:hover{
+    background-color: #CCDADF;
+}
+
+#play, #step, #end, #start, #pause{
+    display: block;
+    width: 80px;
+    text-align: left;
+    font-family: "Courier New";
+    font-size: 10px;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+.btn{
+    width: 79px;
+    height: 65px;
+    display: inline;
+    float:left;
+    background-color: #CCDADF;
+    text-align: center;
+    color: black;
+    border: none;
+    font-family: "Courier New";
+}
+
+.shw{
+    width: 79px;
+    float: left;
+    height: 65px;
+    display: inline;
+    background-color: #CCDADF;
+    text-align: center;
+    color: black;
+    border: none;
+    font-family: "Courier New";
+}
+
+
+.form-group-tab{
+    padding-bottom: 10px;
+    border: none;
+    position: relative;
+    float:right;
+    z-index: 4;
+    opacity: .8;
+
+}
+
+.btn:hover, .shw:hover{
+    background-color: #36B8E3;
+    color: white;
+}
+
+.btn.selected, .shw.selected{
+    background-color: #36B8E3;
+    color: white;
+}
+
+
+
+#method {
+    display: block;
+    margin-top: 4px;
+}
+
+/* Table Styling */
+caption {
+    color: #000080;
+    font-weight: bold;
+    font-size: 160%;
+    text-align: left;
+}
+
+table {
+    padding-top: 80px;
+    padding-right: 100%;
+    width: 100%;
+    margin-left: 225px;
+    position: absolute;
+    z-index: 3;
+    background-color: #5A6569;
+    height: 100%;
+}
+
+table, td, th {
+    border: 2px solid gray;
+    word-wrap: break-word;
+    max-width: 450px;
+}
+
+tbody > tr > td:nth-child(3) {
+    min-width: 80px;
+}
+
+th {
+    color: white;
+    background-color: #000080;
+}
+
+/* Vis Styling */
+#vis_header {
+    width: 720px;
+    text-align: center;
+}
+
+#vis {
+    margin-top: 20px;
+    position: absolute;
+    float: left;
+    z-index: 2;
+}
+
+img {
+    margin-right: 10px;
+    float: left;
+}
+
+
+/*A whole bunch of loading animation garbage*/
+
+.cs-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15%;
+    width: 30%;
+    padding-left: 30%;
+    padding-top: 10%;
+}
+
+.cs-loader-inner {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: calc(100% - 200px);
+    color: #FFF;
+    padding: 0 100px;
+    text-align: center;
+}
+
+.cs-loader-inner label {
+    font-size: 20px;
+    opacity: 0;
+    display:inline-block;
+}
+
+@keyframes lol {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    33% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    66% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+}
+
+@-webkit-keyframes lol {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-300px);
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(300px);
+    }
+}
+
+.cs-loader-inner label:nth-child(6) {
+    -webkit-animation: lol 3s infinite ease-in-out;
+    animation: lol 3s infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(5) {
+    -webkit-animation: lol 3s 100ms infinite ease-in-out;
+    animation: lol 3s 100ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(4) {
+    -webkit-animation: lol 3s 200ms infinite ease-in-out;
+    animation: lol 3s 200ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(3) {
+    -webkit-animation: lol 3s 300ms infinite ease-in-out;
+    animation: lol 3s 300ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(2) {
+    -webkit-animation: lol 3s 400ms infinite ease-in-out;
+    animation: lol 3s 400ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(1) {
+    -webkit-animation: lol 3s 500ms infinite ease-in-out;
+    animation: lol 3s 500ms infinite ease-in-out;
+}
+
+
+
+
+
+

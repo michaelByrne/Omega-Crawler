@@ -1,0 +1,155 @@
+<!-- Omega Team - CS419_400 WebCrawler -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Omega WebCrawler</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen+Mono' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <script language="javascript" type="text/javascript" src="p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="tree.js"></script>
+    <script language="javascript" type="text/javascript" src="omega_JS.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+</head>
+
+<body>
+
+<div class="cs-loader">
+    <div class="cs-loader-inner">
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+    </div>
+</div>
+<script>$(".cs-loader").hide();</script>
+
+<form id="player">
+    <fieldset class="player_set">
+        <legend>Playback</legend>
+        <button type="button" id="play" onclick="startPlay()"> Play > </button>
+        <button type="button" id="step" onclick="stepFwd()"> Step >| </button>
+        <button type="button" id="end" onclick="endPlay()"> End >>| </button>
+        <button type="button" id="start" onclick="restartPlay()"> |<< Start </button>
+        <button type="button" id="pause" onclick="pausePlay()"> Pause </button>
+    </fieldset>
+</form>
+<script>$("#player").hide();</script>
+<form id="form">
+    <fieldset>
+        <legend>Crawler Options</legend>
+            <div class="form-group">
+                <label class="flt" for="url">Starting URL:</label>
+                <input type="text" id="url" class="var_width"/>
+            </div>
+            <div class="form-group">
+                <label class="flt" for="max">Max Pages (< 50):</label>
+                <input type="number" id="max"/>
+            </div>
+            <div class="form-group">
+                <label class="flt" for="term">Stop at word:</label>
+                <input type="text" id="term" class="var_width"/>
+            </div>
+            <div class="form-group">
+                <label class="flt">Search method</label>
+                <select id="method">
+                    <option value="BF">Breadth-First</option>
+                    <option value="DF">Depth-First</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="flt">Max children to crawl:</label>
+                <select id="limit">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="flt" for="history">Search History:</label>
+                <select readonly id="history" class="var_width" onchange="lockInput()">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="flt">Playback order:</label>
+                <select id="playback">
+                    <option value="Search Order">Crawl Order</option>
+                    <option value="Standard">Standard Traversal</option>
+                </select>
+            </div>
+            <div class="form-group-relative">
+                <label class="checkbox">Start collapsed?</label>
+                <input type="checkbox" class="collapsedOn" value="false">
+            </div>
+            <hr>
+            <div class="form-group">
+                <button class="button" onclick="reset()">Reset</button>
+                <button class="button button2" onclick="clear_history()">Clear History</button>
+                <button type="button" onclick="new_crawl()" id="submit">Submit</button>
+            </div>
+    </fieldset>
+</form>
+<div class="form-group-tab">
+    <button class="btn">Tree</button>
+    <button class="shw">Table</button>
+</div>
+
+<div class="title_card"><h1>Omega<br>&nbsp;&nbsp;&nbsp; Web<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Crawler</h1></div>
+
+<div id="vis">
+</div>
+
+
+<div id="table">
+</div>
+
+
+<script>
+    $("#table").hide();
+    $(".form-group-tab").hide();
+    $('button.btn').addClass('selected');
+    $('button.shw').click(function(){
+        $("#table").show();
+        $("#player").hide();
+        $('button.btn').removeClass('selected');
+        if(!$(this).hasClass('selected'))
+            $(this).addClass('selected');
+    });
+    $('button.btn').click(function(){
+        $("#table").hide();
+        $("#player").show();
+        $('button.shw').removeClass('selected');
+        $(this).addClass('selected');
+    });
+    $("#play").hover(function(){
+        $(this).css("background-color", "#CCDADF");
+    },function(){
+        $(this).css("background-color", "#FFCE9B");});
+    $("#pause").hover(function(){
+        $(this).css("background-color", "#CCDADF");
+    },function(){
+        $(this).css("background-color", "#FFCE9B");});
+    $("#step").hover(function(){
+        $(this).css("background-color", "#CCDADF");
+    },function(){
+        $(this).css("background-color", "#FFCE9B");});
+    $("#end").hover(function(){
+        $(this).css("background-color", "#CCDADF");
+    },function(){
+        $(this).css("background-color", "#FFCE9B");});
+    $("#start").hover(function(){
+        $(this).css("background-color", "#CCDADF");
+    },function(){
+        $(this).css("background-color", "#FFCE9B");});
+
+</script>
+
+
+</body>
+</html>
